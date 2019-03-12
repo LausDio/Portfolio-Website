@@ -78,135 +78,75 @@
             <div class="row">
                 <div class="col-lg-12">
                       <h1>Gallery</h1>
-                  <!-- Images used to open the lightbox -->
-                  <div class="row">
-                    <div class="column">
-                      <img src="img/1.png" onclick="openModal();currentSlide(1)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/2.png" onclick="openModal();currentSlide(2)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/3.png" onclick="openModal();currentSlide(3)" class="hover-shadow" height="200">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="column">
-                      <img src="img/4.png" onclick="openModal();currentSlide(4)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/5.png" onclick="openModal();currentSlide(5)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/6.png" onclick="openModal();currentSlide(6)" class="hover-shadow" height="200">
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="column">
-                      <img src="img/7.png" onclick="openModal();currentSlide(7)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/8.png" onclick="openModal();currentSlide(8)" class="hover-shadow" height="200">
-                    </div>
-                    <div class="column">
-                      <img src="img/9.png" onclick="openModal();currentSlide(9)" class="hover-shadow" height="200">
-                    </div>
-                  </div>
 
-                  <!-- The Modal/Lightbox -->
-                  <div id="myModal" class="modal">
-                    <span class="close cursor" onclick="closeModal()">&times;</span>
-                    <div class="modal-content">
-
-                      <div class="mySlides">
-                        <div class="numbertext">1 / 9</div>
-                        <img src="img/1.png" class="modal-img">
+                      <!-- Images used to open the lightbox -->
+                      <div class="row">
+                        <div class="column">
+                          <img src="img/1.png" onclick="openModal();currentSlide(1)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/2.png" onclick="openModal();currentSlide(2)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/3.png" onclick="openModal();currentSlide(3)" class="hover-shadow" height="200">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="column">
+                          <img src="img/4.png" onclick="openModal();currentSlide(4)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/5.png" onclick="openModal();currentSlide(5)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/6.png" onclick="openModal();currentSlide(6)" class="hover-shadow" height="200">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="column">
+                          <img src="img/7.png" onclick="openModal();currentSlide(7)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/8.png" onclick="openModal();currentSlide(8)" class="hover-shadow" height="200">
+                        </div>
+                        <div class="column">
+                          <img src="img/9.png" onclick="openModal();currentSlide(9)" class="hover-shadow" height="200">
+                        </div>
                       </div>
 
-                      <div class="mySlides">
-                        <div class="numbertext">2 / 9</div>
-                        <img src="img/2.png" class="modal-img">
+                      <!-- The Modal/Lightbox -->
+                      <div id="myModal" class="modal">
+                        <span class="close cursor" onclick="closeModal()">&times;</span>
+                        <div class="modal-content">
+
+                          <script id="review-item-template2" type="text/x-handlebars-template">
+                              {{#each array}}
+                              <div class="mySlides">
+                                <div class="numbertext">{{ImageName}} / 9</div>
+                                <img class="modal-img" src="img/{{ImageName}}.png">
+                              </div>
+                              {{/each}}
+                          </script>
+                          <!-- Next/previous controls -->
+                          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                          <!-- Caption text -->
+                          <div class="caption-container">
+                            <p id="caption"></p>
+                          </div>
+
+                          <!-- Thumbnail image controls -->
+                          <script id="review-item-template" type="text/x-handlebars-template">
+                            {{#each array}}
+                            <div class="column">
+                              <img class="demo" src="img/thumbnail/{{ImageName}}.png" onclick="currentSlide({{ImageName}})" alt="{{AltText}}">
+                            </div>
+                            {{/each}}
+                          </script>
+                        </div>
                       </div>
 
-                      <div class="mySlides">
-                        <div class="numbertext">3 / 9</div>
-                        <img src="img/3.png" class="modal-img">
-                      </div>
-                      <div class="mySlides">
-                        <div class="numbertext">4 / 9</div>
-                        <img src="img/4.png" class="modal-img">
-                      </div>
-
-                      <div class="mySlides">
-                        <div class="numbertext">5 / 9</div>
-                        <img src="img/5.png" class="modal-img">
-                      </div>
-
-                      <div class="mySlides">
-                        <div class="numbertext">6 / 9</div>
-                        <img src="img/6.png" class="modal-img">
-                      </div>
-                      <div class="mySlides">
-                        <div class="numbertext">7 / 9</div>
-                        <img src="img/7.png" class="modal-img">
-                      </div>
-
-                      <div class="mySlides">
-                        <div class="numbertext">8 / 9</div>
-                        <img src="img/8.png" class="modal-img">
-                      </div>
-
-                      <div class="mySlides">
-                        <div class="numbertext">9 / 9</div>
-                        <img src="img/9.png" class="modal-img">
-                      </div>
-                      <!-- Next/previous controls -->
-                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                      <!-- Caption text -->
-                      <div class="caption-container">
-                        <p id="caption"></p>
-                      </div>
-
-                      <!-- Thumbnail image controls -->
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/1.png" onclick="currentSlide(1)" alt="1">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/2.png" onclick="currentSlide(2)" alt="2">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/3.png" onclick="currentSlide(3)" alt="3">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/4.png" onclick="currentSlide(4)" alt="4">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/5.png" onclick="currentSlide(5)" alt="5">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/6.png" onclick="currentSlide(6)" alt="6">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/7.png" onclick="currentSlide(7)" alt="7">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/8.png" onclick="currentSlide(8)" alt="8">
-                      </div>
-
-                      <div class="column">
-                        <img class="demo" src="img/thumbnail/9.png" onclick="currentSlide(9)" alt="9">
-                      </div>
-                    </div>
-                  </div>
                 </div>
             </div>
         </div>
@@ -253,7 +193,9 @@
     </section>
 
 	<a id="back2Top" title="Back to top" href="#">&#10148;</a>
-
+  <div id="footer">
+        <strong>Copyright@2019 </strong>
+      </div>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
@@ -264,7 +206,9 @@
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/sticky-menu.js"></script>
 
-    <script src="js/myscript.js"></script>
+      <script src="js/handlebars-code2.js"></script>
+        <script src="js/handlebars-code.js"></script>
+        <script src="js/myscript.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
