@@ -39,6 +39,7 @@ body{
     border: none;
     border-radius: 1rem;
     padding: 1.5%;
+    font-size:20px;
     background: -webkit-linear-gradient(#cd2f30, #f04d45, #cd2f30);
     font-weight: 600;
     color: #fff;

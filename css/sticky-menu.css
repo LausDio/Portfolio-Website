@@ -76,3 +76,6 @@ html {
 .navbar-default .navbar-nav > li > a {
     color: #000;
 }
+.profile-picture img{
+    width: 20%;
+}
