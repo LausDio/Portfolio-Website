@@ -9,6 +9,9 @@
     <meta name="description" content="Simplified Bootstrap template with sticky menu">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/sticky-menu.css" rel="stylesheet">
+    <link href="css/contactstyle.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <script type="text/javascript" src="js/handlebars-v4.1.0.js"></script>
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -46,10 +49,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Bootstrap Sticky Scrolling Menu</h1>
-                    <p>Responsive one-page scrolling template with sticky menu on the top of the page. The active page gets highlighted as the user scrolls on the page or selects an option in the menu.</p>
-					<p>A back to top arrow fades in as the user starts scrolling down the page which takes back to the welcome screen with one click.</p>
-					<p>You can edit and publish this template but please leave a reference to <a href="https://html5-templates.com/" target="_blank" rel="nofollow">HTML5 Templates</a>. Thank You!</p>
+                    <h1>I`m Julia</h1>
+                    <p>an illustrator and comic artist.</p>
 					<p>&nbsp;</p>
                     <a class="btn btn-primary page-scroll" href="#about">Click To Scroll Down!</a>
                 </div>
@@ -62,18 +63,150 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>About</h1>
+                    <h1>Hi.</h1>
+                    <p>I'm an illustrator and comic artist from Odessa, Ukraine. I have a passion for drawing and currently I'm working on my degree in fine arts. You may also be familiar with my artistic work under the name Gertrude.</p>
+                    <h2>I’m currently available for freelance work.</h2>
+                    <p>If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- What we do Section -->
+    <!-- Gallery Section -->
     <section id="gallery" class="gallery-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Gallery</h1>
+                      <h1>Gallery</h1>
+                  <!-- Images used to open the lightbox -->
+                  <div class="row">
+                    <div class="column">
+                      <img src="img/1.png" onclick="openModal();currentSlide(1)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/2.png" onclick="openModal();currentSlide(2)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/3.png" onclick="openModal();currentSlide(3)" class="hover-shadow" height="200">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <img src="img/4.png" onclick="openModal();currentSlide(4)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/5.png" onclick="openModal();currentSlide(5)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/6.png" onclick="openModal();currentSlide(6)" class="hover-shadow" height="200">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="column">
+                      <img src="img/7.png" onclick="openModal();currentSlide(7)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/8.png" onclick="openModal();currentSlide(8)" class="hover-shadow" height="200">
+                    </div>
+                    <div class="column">
+                      <img src="img/9.png" onclick="openModal();currentSlide(9)" class="hover-shadow" height="200">
+                    </div>
+                  </div>
+
+                  <!-- The Modal/Lightbox -->
+                  <div id="myModal" class="modal">
+                    <span class="close cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+
+                      <div class="mySlides">
+                        <div class="numbertext">1 / 9</div>
+                        <img src="img/1.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">2 / 9</div>
+                        <img src="img/2.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">3 / 9</div>
+                        <img src="img/3.png" class="modal-img">
+                      </div>
+                      <div class="mySlides">
+                        <div class="numbertext">4 / 9</div>
+                        <img src="img/4.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">5 / 9</div>
+                        <img src="img/5.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">6 / 9</div>
+                        <img src="img/6.png" class="modal-img">
+                      </div>
+                      <div class="mySlides">
+                        <div class="numbertext">7 / 9</div>
+                        <img src="img/7.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">8 / 9</div>
+                        <img src="img/8.png" class="modal-img">
+                      </div>
+
+                      <div class="mySlides">
+                        <div class="numbertext">9 / 9</div>
+                        <img src="img/9.png" class="modal-img">
+                      </div>
+                      <!-- Next/previous controls -->
+                      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                      <!-- Caption text -->
+                      <div class="caption-container">
+                        <p id="caption"></p>
+                      </div>
+
+                      <!-- Thumbnail image controls -->
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/1.png" onclick="currentSlide(1)" alt="1">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/2.png" onclick="currentSlide(2)" alt="2">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/3.png" onclick="currentSlide(3)" alt="3">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/4.png" onclick="currentSlide(4)" alt="4">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/5.png" onclick="currentSlide(5)" alt="5">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/6.png" onclick="currentSlide(6)" alt="6">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/7.png" onclick="currentSlide(7)" alt="7">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/8.png" onclick="currentSlide(8)" alt="8">
+                      </div>
+
+                      <div class="column">
+                        <img class="demo" src="img/thumbnail/9.png" onclick="currentSlide(9)" alt="9">
+                      </div>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
@@ -84,7 +217,36 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Contact Section</h1>
+
+                  <div class="container contact-form">
+                            <div class="contact-image">
+                                <img src="img/bottle.png" alt="bottle_contact"/>
+                            </div>
+                            <form method="post">
+                                <h1>Contact me!</h1>
+                               <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="submit" name="btnSubmit" class="btnContact" value="Send Message" />
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                  </div>
                 </div>
             </div>
         </div>
@@ -101,6 +263,12 @@
     <!-- Scrolling Nav JavaScript -->
     <script src="js/jquery.easing.min.js"></script>
     <script src="js/sticky-menu.js"></script>
+
+    <script src="js/myscript.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </body>
 
